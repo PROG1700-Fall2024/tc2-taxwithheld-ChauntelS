@@ -12,13 +12,34 @@
 
 def main():
     # YOUR CODE STARTS HERE, each line must be indented (one tab)
+    # user input values 
+    WeeklySalary = float(input("Enter your total weekly earnings:$"))
+    NumberDepend = int(input("Enter number of dependents:"))
 
+    #Variables
+    ProvincialdW = float(0.06)
+    FederalW = float(0.25)
+    Dependents = float(0.02)
 
+    PDeduct = float(WeeklySalary * ProvincialdW)
+    FDeduct = float(WeeklySalary * FederalW)
+    
+    
+    print("Total Provincial tax withheld:${0:.2f}".format(PDeduct))
+    print("Total Federal taxwith held:${0:.2f}".format(FDeduct))
+    
+    TotalDuct = float((PDeduct) + (FDeduct))
+    DDeduct = float((WeeklySalary) * (Dependents) * (NumberDepend))
 
+    DDeduct = float((TotalDuct) * (Dependents) * int(NumberDepend))
 
+    print("Total Dependent deduction for {0}".format(NumberDepend),"dependents:${0:.2f}" .format(DDeduct))
 
+    TotalEarn = float((WeeklySalary - TotalDuct)+float(DDeduct))
 
+    print("Total withheld:${0:.2f}".format(TotalDuct))
 
+    print("Total take home:${0:.2f}".format(TotalEarn))
 
     # YOUR CODE ENDS HERE
 
